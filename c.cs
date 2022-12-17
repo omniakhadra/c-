@@ -19,6 +19,17 @@ public class Student :Person
     public float Gpa;           
     public Student (string name,int age,int year,float gpa ):base(name,age)
     {
+            if(year >= 1 && year <= 5)
+    {
+      throw new Exception("Invalid Year");
+    }
+
+    if(gpa >= 0 && gpa <= 4)
+    {
+      throw new Exception("Invalid Gpa");
+    }
+
+
         Year=year; Gpa=gpa; 
     } 
     public override void Print()
@@ -54,6 +65,18 @@ public class Staff :Person
     public int JoinYear; 
     public Staff (string name,int age,double salary ,int joinyear):base(name,age)
     { 
+            if(salary > 0 && salary < 120_000)  
+    {  
+      throw new Exception("Invalid Salary");  
+    }  
+  
+    if(JoinYear > 21)  
+    {  
+      throw new Exception("Invalid JoinYear");  
+    }  
+  
+
+  
     Salary=salary; JoinYear=joinyear; 
     } 
     public override void Print()
